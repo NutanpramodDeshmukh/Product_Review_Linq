@@ -18,12 +18,12 @@ namespace ProductReviewManagement
                 Console.WriteLine($"ProductId: {Pr.ProductId} UserId: {Pr.ProductId} Rating: {Pr.Rating} Review: {Pr.Review} isLike: {Pr.isLike}");
             }
         }
-        public void RetriveCountOfRecords(List<ProductReview> listproductReviews)
+        public void RetriveIdandReviewRecords(List<ProductReview> listproductReviews)
         {
-            var recordedData = listproductReviews.GroupBy(x => x.ProductId).Select(x => new { productId = x.Key, count = x.Count() });
+            var recordedData = listproductReviews.Select(x => new { productId = x.ProductId, review = x.Review });
             foreach (var Pr in recordedData)
             {
-                Console.WriteLine($"ProductId: {Pr.productId}   Count: {Pr.count}");
+                Console.WriteLine($"ProductId: {Pr.productId}   Review: {Pr.review}");
             }
         }
     }

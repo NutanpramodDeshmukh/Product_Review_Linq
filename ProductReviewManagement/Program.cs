@@ -27,6 +27,8 @@ namespace ProductReviewManagement
             {
                 Console.WriteLine($"ProductId: {Pr.ProductId} UserId: {Pr.ProductId} Rating: {Pr.Rating} Review: {Pr.Review} isLike: {Pr.isLike}");
             }
+            Records r = new Records();
+            r.RetriveIdandReviewRecords(ProductReviewlist);
         }
     }
 }
